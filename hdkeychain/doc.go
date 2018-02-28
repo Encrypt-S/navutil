@@ -76,7 +76,7 @@ looks like the following:
 
 Network
 
-Extended keys are much like normal Bitcoin addresses in that they have version
+Extended keys are much like normal Navcoin addresses in that they have version
 bytes which tie them to a specific network.  The SetNet and IsForNet functions
 are provided to set and determinine which network an extended key is associated
 with.

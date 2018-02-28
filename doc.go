@@ -21,8 +21,8 @@ expensive hashing operations.
 
 Address Overview
 
-The Address interface provides an abstraction for a Bitcoin address.  While the
-most common type is a pay-to-pubkey-hash, Bitcoin already supports others and
+The Address interface provides an abstraction for a Navcoin address.  While the
+most common type is a pay-to-pubkey-hash, Navcoin already supports others and
 may well support more in the future.  This package currently provides
 implementations for the pay-to-pubkey, pay-to-pubkey-hash, and
 pay-to-script-hash address types.
