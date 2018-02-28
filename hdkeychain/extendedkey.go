@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/aguycalled/navd/navec"
+	"github.com/aguycalled/navd/btcec"
 	"github.com/aguycalled/navd/chaincfg"
 	"github.com/aguycalled/navd/chaincfg/chainhash"
 	"github.com/aguycalled/navutil"
@@ -154,8 +154,8 @@ func (k *ExtendedKey) pubKeyBytes() []byte {
 	// This is a private extended key, so calculate and memoize the public
 	// key if needed.
 	if len(k.pubKey) == 0 {
-		pkx, pky := navec.S256().ScalarBaseMult(k.key)
-		pubKey := navec.PublicKey{Curve: navec.S256(), X: pkx, Y: pky}
+		pkx, pky := btcec.S256().ScalarBaseMult(k.key)
+		pubKey := btcec.PublicKey{Curve: btcec.S256(), X: pkx, Y: pky}
 		k.pubKey = pubKey.SerializeCompressed()
 	}
 
@@ -271,7 +271,7 @@ func (k *ExtendedKey) Child(i uint32) (*ExtendedKey, error) {
 	// a child extended key can't be created for this index and the caller
 	// should simply increment to the next index.
 	ilNum := new(big.Int).SetBytes(il)
-	if ilNum.Cmp(navec.S256().N) >= 0 || ilNum.Sign() == 0 {
+	if ilNum.Cmp(btcec.S256().N) >= 0 || ilNum.Sign() == 0 {
 		return nil, ErrInvalidChild
 	}
 
@@ -293,14 +293,14 @@ func (k *ExtendedKey) Child(i uint32) (*ExtendedKey, error) {
 		// childKey = parse256(Il) + parenKey
 		keyNum := new(big.Int).SetBytes(k.key)
 		ilNum.Add(ilNum, keyNum)
-		ilNum.Mod(ilNum, navec.S256().N)
+		ilNum.Mod(ilNum, btcec.S256().N)
 		childKey = ilNum.Bytes()
 		isPrivate = true
 	} else {
 		// Case #3.
 		// Calculate the corresponding intermediate public key for
 		// intermediate private key.
-		ilx, ily := navec.S256().ScalarBaseMult(il)
+		ilx, ily := btcec.S256().ScalarBaseMult(il)
 		if ilx.Sign() == 0 || ily.Sign() == 0 {
 			return nil, ErrInvalidChild
 		}
@@ -308,7 +308,7 @@ func (k *ExtendedKey) Child(i uint32) (*ExtendedKey, error) {
 		// Convert the serialized compressed parent public key into X
 		// and Y coordinates so it can be added to the intermediate
 		// public key.
-		pubKey, err := navec.ParsePubKey(k.key, navec.S256())
+		pubKey, err := btcec.ParsePubKey(k.key, btcec.S256())
 		if err != nil {
 			return nil, err
 		}
@@ -317,8 +317,8 @@ func (k *ExtendedKey) Child(i uint32) (*ExtendedKey, error) {
 		// derive the final child key.
 		//
 		// childKey = serP(point(parse256(Il)) + parentKey)
-		childX, childY := navec.S256().Add(ilx, ily, pubKey.X, pubKey.Y)
-		pk := navec.PublicKey{Curve: navec.S256(), X: childX, Y: childY}
+		childX, childY := btcec.S256().Add(ilx, ily, pubKey.X, pubKey.Y)
+		pk := btcec.PublicKey{Curve: btcec.S256(), X: childX, Y: childY}
 		childKey = pk.SerializeCompressed()
 	}
 
@@ -357,21 +357,21 @@ func (k *ExtendedKey) Neuter() (*ExtendedKey, error) {
 		k.depth, k.childNum, false), nil
 }
 
-// ECPubKey converts the extended key to a navec public key and returns it.
-func (k *ExtendedKey) ECPubKey() (*navec.PublicKey, error) {
-	return navec.ParsePubKey(k.pubKeyBytes(), navec.S256())
+// ECPubKey converts the extended key to a btcec public key and returns it.
+func (k *ExtendedKey) ECPubKey() (*btcec.PublicKey, error) {
+	return btcec.ParsePubKey(k.pubKeyBytes(), btcec.S256())
 }
 
-// ECPrivKey converts the extended key to a navec private key and returns it.
+// ECPrivKey converts the extended key to a btcec private key and returns it.
 // As you might imagine this is only possible if the extended key is a private
 // extended key (as determined by the IsPrivate function).  The ErrNotPrivExtKey
 // error will be returned if this function is called on a public extended key.
-func (k *ExtendedKey) ECPrivKey() (*navec.PrivateKey, error) {
+func (k *ExtendedKey) ECPrivKey() (*btcec.PrivateKey, error) {
 	if !k.isPrivate {
 		return nil, ErrNotPrivExtKey
 	}
 
-	privKey, _ := navec.PrivKeyFromBytes(navec.S256(), k.key)
+	privKey, _ := btcec.PrivKeyFromBytes(btcec.S256(), k.key)
 	return privKey, nil
 }
 
@@ -492,7 +492,7 @@ func NewMaster(seed []byte, net *chaincfg.Params) (*ExtendedKey, error) {
 
 	// Ensure the key in usable.
 	secretKeyNum := new(big.Int).SetBytes(secretKey)
-	if secretKeyNum.Cmp(navec.S256().N) >= 0 || secretKeyNum.Sign() == 0 {
+	if secretKeyNum.Cmp(btcec.S256().N) >= 0 || secretKeyNum.Sign() == 0 {
 		return nil, ErrUnusableSeed
 	}
 
@@ -539,13 +539,13 @@ func NewKeyFromString(key string) (*ExtendedKey, error) {
 		// of the order of the secp256k1 curve and not be 0.
 		keyData = keyData[1:]
 		keyNum := new(big.Int).SetBytes(keyData)
-		if keyNum.Cmp(navec.S256().N) >= 0 || keyNum.Sign() == 0 {
+		if keyNum.Cmp(btcec.S256().N) >= 0 || keyNum.Sign() == 0 {
 			return nil, ErrUnusableSeed
 		}
 	} else {
 		// Ensure the public key parses correctly and is actually on the
 		// secp256k1 curve.
-		_, err := navec.ParsePubKey(keyData, navec.S256())
+		_, err := btcec.ParsePubKey(keyData, btcec.S256())
 		if err != nil {
 			return nil, err
 		}

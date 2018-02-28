@@ -13,7 +13,7 @@ package navutil
 
 import (
 	"github.com/Roasbeef/navutil/bech32"
-	"github.com/aguycalled/navd/navec"
+	"github.com/aguycalled/navd/btcec"
 	"github.com/aguycalled/navutil/base58"
 	"golang.org/x/crypto/ripemd160"
 )
@@ -82,10 +82,10 @@ func TstAddressWitnessScriptHash(version byte, program [32]byte,
 func TstAddressPubKey(serializedPubKey []byte, pubKeyFormat PubKeyFormat,
 	netID byte) *AddressPubKey {
 
-	pubKey, _ := navec.ParsePubKey(serializedPubKey, navec.S256())
+	pubKey, _ := btcec.ParsePubKey(serializedPubKey, btcec.S256())
 	return &AddressPubKey{
 		pubKeyFormat: pubKeyFormat,
-		pubKey:       (*navec.PublicKey)(pubKey),
+		pubKey:       (*btcec.PublicKey)(pubKey),
 		pubKeyHashID: netID,
 	}
 }
