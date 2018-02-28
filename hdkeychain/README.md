@@ -1,11 +1,11 @@
 hdkeychain
 ==========
 
-[![Build Status](http://img.shields.io/travis/roasbeef/btcutil.svg)]
-(https://travis-ci.org/roasbeef/btcutil) [![ISC License]
+[![Build Status](http://img.shields.io/travis/aguycalled/navutil.svg)]
+(https://travis-ci.org/aguycalled/navutil) [![ISC License]
 (http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](http://img.shields.io/badge/godoc-reference-blue.svg)]
-(http://godoc.org/github.com/roasbeef/btcutil/hdkeychain)
+(http://godoc.org/github.com/aguycalled/navutil/hdkeychain)
 
 Package hdkeychain provides an API for bitcoin hierarchical deterministic
 extended keys (BIP0032).
@@ -26,10 +26,10 @@ report.
   keys
 - Support for custom networks by registering them with chaincfg
 - Obtaining the underlying EC pubkeys, EC privkeys, and associated bitcoin
-  addresses ties in seamlessly with existing btcec and btcutil types which
+  addresses ties in seamlessly with existing navec and navutil types which
   provide powerful tools for working with them to do things like sign
   transations and generate payment scripts
-- Uses the btcec package which is highly optimized for secp256k1
+- Uses the navec package which is highly optimized for secp256k1
 - Code examples including:
   - Generating a cryptographically secure random seed and deriving a
     master node from it
@@ -41,21 +41,21 @@ report.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/roasbeef/btcutil/hdkeychain
+$ go get -u github.com/aguycalled/navutil/hdkeychain
 ```
 
 ## Examples
 
 * [NewMaster Example]
-  (http://godoc.org/github.com/roasbeef/btcutil/hdkeychain#example-NewMaster)  
+  (http://godoc.org/github.com/aguycalled/navutil/hdkeychain#example-NewMaster)  
   Demonstrates how to generate a cryptographically random seed then use it to
   create a new master node (extended key).
 * [Default Wallet Layout Example]
-  (http://godoc.org/github.com/roasbeef/btcutil/hdkeychain#example-package--DefaultWalletLayout)  
+  (http://godoc.org/github.com/aguycalled/navutil/hdkeychain#example-package--DefaultWalletLayout)  
   Demonstrates the default hierarchical deterministic wallet layout as described
   in BIP0032.
 * [Audits Use Case Example]
-  (http://godoc.org/github.com/roasbeef/btcutil/hdkeychain#example-package--Audits)  
+  (http://godoc.org/github.com/aguycalled/navutil/hdkeychain#example-package--Audits)  
   Demonstrates the audits use case in BIP0032.
 
 ## License

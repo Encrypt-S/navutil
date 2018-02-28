@@ -1,30 +1,30 @@
-btcutil
+navutil
 =======
 
-[![Build Status](http://img.shields.io/travis/roasbeef/btcutil.svg)]
-(https://travis-ci.org/roasbeef/btcutil) [![Coverage Status]
-(http://img.shields.io/coveralls/roasbeef/btcutil.svg)]
-(https://coveralls.io/r/roasbeef/btcutil?branch=master) [![ISC License]
+[![Build Status](http://img.shields.io/travis/aguycalled/navutil.svg)]
+(https://travis-ci.org/aguycalled/navutil) [![Coverage Status]
+(http://img.shields.io/coveralls/aguycalled/navutil.svg)]
+(https://coveralls.io/r/aguycalled/navutil?branch=master) [![ISC License]
 (http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](http://img.shields.io/badge/godoc-reference-blue.svg)]
-(http://godoc.org/github.com/roasbeef/btcutil)
+(http://godoc.org/github.com/aguycalled/navutil)
 
-Package btcutil provides bitcoin-specific convenience functions and types.
+Package navutil provides bitcoin-specific convenience functions and types.
 A comprehensive suite of tests is provided to ensure proper functionality.  See
 `test_coverage.txt` for the gocov coverage report.  Alternatively, if you are
 running a POSIX OS, you can run the `cov_report.sh` script for a real-time
 report.
 
-This package was developed for btcd, an alternative full-node implementation of
+This package was developed for navd, an alternative full-node implementation of
 bitcoin which is under active development by Conformal.  Although it was
-primarily written for btcd, this package has intentionally been designed so it
+primarily written for navd, this package has intentionally been designed so it
 can be used as a standalone package for any projects needing the functionality
 provided.
 
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/roasbeef/btcutil
+$ go get -u github.com/aguycalled/navutil
 ```
 
 ## GPG Verification Key
@@ -49,5 +49,5 @@ verify the signature perform the following:
 
 ## License
 
-Package btcutil is licensed under the [copyfree](http://copyfree.org) ISC
+Package navutil is licensed under the [copyfree](http://copyfree.org) ISC
 License.

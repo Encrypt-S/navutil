@@ -2,13 +2,13 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package btcutil_test
+package navutil_test
 
 import (
 	"math"
 	"testing"
 
-	. "github.com/roasbeef/btcutil"
+	. "github.com/aguycalled/navutil"
 )
 
 func TestAmountCreation(t *testing.T) {
