@@ -8,7 +8,7 @@ import (
 	"math"
 	"testing"
 
-	. "github.com/aguycalled/navutil"
+	. "github.com/navcoin/navutil"
 )
 
 func TestAmountCreation(t *testing.T) {

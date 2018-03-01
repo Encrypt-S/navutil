@@ -10,8 +10,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/aguycalled/navd/chaincfg/chainhash"
-	"github.com/aguycalled/navutil"
+	"github.com/navcoin/navd/chaincfg/chainhash"
+	"github.com/navcoin/navutil"
 	"github.com/davecgh/go-spew/spew"
 )
 

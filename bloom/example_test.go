@@ -9,9 +9,9 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/aguycalled/navd/chaincfg/chainhash"
-	"github.com/aguycalled/navd/wire"
-	"github.com/aguycalled/navutil/bloom"
+	"github.com/navcoin/navd/chaincfg/chainhash"
+	"github.com/navcoin/navd/wire"
+	"github.com/navcoin/navutil/bloom"
 )
 
 // This example demonstrates how to create a new bloom filter, add a transaction

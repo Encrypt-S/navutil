@@ -11,7 +11,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/aguycalled/navutil/gcs"
+	"github.com/navcoin/navutil/gcs"
 )
 
 var (

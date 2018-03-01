@@ -1,11 +1,11 @@
 coinset
 =======
 
-[![Build Status](http://img.shields.io/travis/aguycalled/navutil.svg)]
-(https://travis-ci.org/aguycalled/navutil) [![ISC License]
+[![Build Status](http://img.shields.io/travis/navcoin/navutil.svg)]
+(https://travis-ci.org/navcoin/navutil) [![ISC License]
 (http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](http://img.shields.io/badge/godoc-reference-blue.svg)]
-(http://godoc.org/github.com/aguycalled/navutil/coinset)
+(http://godoc.org/github.com/navcoin/navutil/coinset)
 
 Package coinset provides bitcoin-specific convenience functions for selecting
 from and managing sets of unspent transaction outpoints (UTXOs).
@@ -18,7 +18,7 @@ report.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/aguycalled/navutil/coinset
+$ go get -u github.com/navcoin/navutil/coinset
 ```
 
 ## Usage

@@ -11,10 +11,10 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/aguycalled/navd/chaincfg/chainhash"
-	"github.com/aguycalled/navd/wire"
-	"github.com/aguycalled/navutil"
-	"github.com/aguycalled/navutil/coinset"
+	"github.com/navcoin/navd/chaincfg/chainhash"
+	"github.com/navcoin/navd/wire"
+	"github.com/navcoin/navutil"
+	"github.com/navcoin/navutil/coinset"
 )
 
 type TestCoin struct {

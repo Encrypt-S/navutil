@@ -11,8 +11,8 @@ import (
 	"bytes"
 	"sort"
 
-	"github.com/aguycalled/navd/chaincfg/chainhash"
-	"github.com/aguycalled/navd/wire"
+	"github.com/navcoin/navd/chaincfg/chainhash"
+	"github.com/navcoin/navd/wire"
 )
 
 // InPlaceSort modifies the passed transaction inputs and outputs to be sorted

@@ -8,7 +8,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/aguycalled/navutil/base58"
+	"github.com/navcoin/navutil/base58"
 )
 
 func BenchmarkBase58Encode(b *testing.B) {

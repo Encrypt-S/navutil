@@ -9,7 +9,7 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/aguycalled/navutil/base58"
+	"github.com/navcoin/navutil/base58"
 )
 
 var stringTests = []struct {

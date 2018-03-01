@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/aguycalled/navd/chaincfg/chainhash"
-	"github.com/aguycalled/navd/wire"
+	"github.com/navcoin/navd/chaincfg/chainhash"
+	"github.com/navcoin/navd/wire"
 )
 
 // OutOfRangeError describes an error due to accessing an element that is out

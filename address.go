@@ -12,10 +12,10 @@ import (
 	"strings"
 
 	"github.com/btcsuite/golangcrypto/ripemd160"
-	"github.com/aguycalled/navd/btcec"
-	"github.com/aguycalled/navd/chaincfg"
-	"github.com/aguycalled/navutil/base58"
-	"github.com/aguycalled/navutil/bech32"
+	"github.com/navcoin/navd/btcec"
+	"github.com/navcoin/navd/chaincfg"
+	"github.com/navcoin/navutil/base58"
+	"github.com/navcoin/navutil/bech32"
 )
 
 // UnsupportedWitnessVerError describes an error where a segwit address being

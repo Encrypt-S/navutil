@@ -12,7 +12,7 @@ import (
 	"testing"
 	"unicode"
 
-	"github.com/aguycalled/navutil"
+	"github.com/navcoin/navutil"
 )
 
 // TestAppDataDir tests the API for AppDataDir to ensure it gives expected

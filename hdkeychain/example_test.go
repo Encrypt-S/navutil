@@ -7,8 +7,8 @@ package hdkeychain_test
 import (
 	"fmt"
 
-	"github.com/aguycalled/navd/chaincfg"
-	"github.com/aguycalled/navutil/hdkeychain"
+	"github.com/navcoin/navd/chaincfg"
+	"github.com/navcoin/navutil/hdkeychain"
 )
 
 // This example demonstrates how to generate a cryptographically random seed

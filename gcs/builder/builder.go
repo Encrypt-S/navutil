@@ -9,10 +9,10 @@ import (
 	"crypto/rand"
 	"encoding/binary"
 
-	"github.com/aguycalled/navd/chaincfg/chainhash"
-	"github.com/aguycalled/navd/txscript"
-	"github.com/aguycalled/navd/wire"
-	"github.com/aguycalled/navutil/gcs"
+	"github.com/navcoin/navd/chaincfg/chainhash"
+	"github.com/navcoin/navd/txscript"
+	"github.com/navcoin/navd/wire"
+	"github.com/navcoin/navutil/gcs"
 )
 
 // DefaultP is the default collision probability (2^-20)

@@ -1,11 +1,11 @@
 txsort
 ======
 
-[![Build Status](http://img.shields.io/travis/aguycalled/navutil.svg)]
-(https://travis-ci.org/aguycalled/navutil) [![ISC License]
+[![Build Status](http://img.shields.io/travis/navcoin/navutil.svg)]
+(https://travis-ci.org/navcoin/navutil) [![ISC License]
 (http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](http://img.shields.io/badge/godoc-reference-blue.svg)]
-(http://godoc.org/github.com/aguycalled/navutil/txsort)
+(http://godoc.org/github.com/navcoin/navutil/txsort)
 
 Package txsort provides the transaction sorting according to [BIP 69](https://github.com/bitcoin/bips/blob/master/bip-0069.mediawiki).
 
@@ -24,7 +24,7 @@ A comprehensive suite of tests is provided to ensure proper functionality.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/aguycalled/navutil/txsort
+$ go get -u github.com/navcoin/navutil/txsort
 ```
 
 ## License

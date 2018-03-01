@@ -7,9 +7,9 @@ package navutil_test
 import (
 	"testing"
 
-	"github.com/aguycalled/navd/btcec"
-	"github.com/aguycalled/navd/chaincfg"
-	. "github.com/aguycalled/navutil"
+	"github.com/navcoin/navd/btcec"
+	"github.com/navcoin/navd/chaincfg"
+	. "github.com/navcoin/navutil"
 )
 
 func TestEncodeDecodeWIF(t *testing.T) {

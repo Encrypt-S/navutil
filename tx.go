@@ -8,8 +8,8 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/aguycalled/navd/chaincfg/chainhash"
-	"github.com/aguycalled/navd/wire"
+	"github.com/navcoin/navd/chaincfg/chainhash"
+	"github.com/navcoin/navd/wire"
 )
 
 // TxIndexUnknown is the value returned for a transaction index that is unknown.

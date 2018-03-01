@@ -1,13 +1,13 @@
 navutil
 =======
 
-[![Build Status](http://img.shields.io/travis/aguycalled/navutil.svg)]
-(https://travis-ci.org/aguycalled/navutil) [![Coverage Status]
-(http://img.shields.io/coveralls/aguycalled/navutil.svg)]
-(https://coveralls.io/r/aguycalled/navutil?branch=master) [![ISC License]
+[![Build Status](http://img.shields.io/travis/navcoin/navutil.svg)]
+(https://travis-ci.org/navcoin/navutil) [![Coverage Status]
+(http://img.shields.io/coveralls/navcoin/navutil.svg)]
+(https://coveralls.io/r/navcoin/navutil?branch=master) [![ISC License]
 (http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](http://img.shields.io/badge/godoc-reference-blue.svg)]
-(http://godoc.org/github.com/aguycalled/navutil)
+(http://godoc.org/github.com/navcoin/navutil)
 
 Package navutil provides bitcoin-specific convenience functions and types.
 A comprehensive suite of tests is provided to ensure proper functionality.  See
@@ -24,7 +24,7 @@ provided.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/aguycalled/navutil
+$ go get -u github.com/navcoin/navutil
 ```
 
 ## GPG Verification Key

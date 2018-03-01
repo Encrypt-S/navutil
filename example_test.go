@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/aguycalled/navutil"
+	"github.com/navcoin/navutil"
 )
 
 func ExampleAmount() {

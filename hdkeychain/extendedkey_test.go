@@ -16,7 +16,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/aguycalled/navd/chaincfg"
+	"github.com/navcoin/navd/chaincfg"
 )
 
 // TestBIP0032Vectors tests the vectors provided by [BIP32] to ensure the

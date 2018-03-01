@@ -13,8 +13,8 @@ package navutil
 
 import (
 	"github.com/Roasbeef/navutil/bech32"
-	"github.com/aguycalled/navd/btcec"
-	"github.com/aguycalled/navutil/base58"
+	"github.com/navcoin/navd/btcec"
+	"github.com/navcoin/navutil/base58"
 	"golang.org/x/crypto/ripemd160"
 )
 

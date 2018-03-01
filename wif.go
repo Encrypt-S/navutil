@@ -8,10 +8,10 @@ import (
 	"bytes"
 	"errors"
 
-	"github.com/aguycalled/navd/btcec"
-	"github.com/aguycalled/navd/chaincfg"
-	"github.com/aguycalled/navd/chaincfg/chainhash"
-	"github.com/aguycalled/navutil/base58"
+	"github.com/navcoin/navd/btcec"
+	"github.com/navcoin/navd/chaincfg"
+	"github.com/navcoin/navd/chaincfg/chainhash"
+	"github.com/navcoin/navutil/base58"
 )
 
 // ErrMalformedPrivateKey describes an error where a WIF-encoded private

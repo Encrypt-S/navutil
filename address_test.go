@@ -13,8 +13,8 @@ import (
 	"testing"
 
 	"github.com/btcsuite/golangcrypto/ripemd160"
-	"github.com/aguycalled/navd/chaincfg"
-	"github.com/aguycalled/navutil"
+	"github.com/navcoin/navd/chaincfg"
+	"github.com/navcoin/navutil"
 )
 
 func TestAddresses(t *testing.T) {
