@@ -72,7 +72,7 @@ var (
 	}
 )
 
-// TestGCSFilterBuild builds a test filter with a randomized key. For Navcoin
+// TestGCSFilterBuild builds a test filter with a randomized key. For NavCoin
 // use, deterministic filter generation is desired. Therefore, a key that's
 // derived deterministically would be required.
 func TestGCSFilterBuild(t *testing.T) {

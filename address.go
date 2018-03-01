@@ -135,7 +135,7 @@ type Address interface {
 // public key, the address will be associated with the passed defaultNet.
 func DecodeAddress(addr string, defaultNet *chaincfg.Params) (Address, error) {
 	// Bech32 encoded segwit addresses start with a human-readable part
-	// (hrp) followed by '1'. For Navcoin mainnet the hrp is "bc", and for
+	// (hrp) followed by '1'. For NavCoin mainnet the hrp is "bc", and for
 	// testnet it is "tb". If the address string has a prefix that matches
 	// one of the prefixes for the known networks, we try to decode it as
 	// a segwit address.
@@ -448,7 +448,7 @@ func (a *AddressPubKey) serialize() []byte {
 // pay-to-pubkey-hash.  Note that the public key format (uncompressed,
 // compressed, etc) will change the resulting address.  This is expected since
 // pay-to-pubkey-hash is a hash of the serialized public key which obviously
-// differs with the format.  At the time of this writing, most Navcoin addresses
+// differs with the format.  At the time of this writing, most NavCoin addresses
 // are pay-to-pubkey-hash constructed from the uncompressed public key.
 //
 // Part of the Address interface.
@@ -491,7 +491,7 @@ func (a *AddressPubKey) SetFormat(pkFormat PubKeyFormat) {
 // pay-to-pubkey-hash address.  Note that the public key format (uncompressed,
 // compressed, etc) will change the resulting address.  This is expected since
 // pay-to-pubkey-hash is a hash of the serialized public key which obviously
-// differs with the format.  At the time of this writing, most Navcoin addresses
+// differs with the format.  At the time of this writing, most NavCoin addresses
 // are pay-to-pubkey-hash constructed from the uncompressed public key.
 func (a *AddressPubKey) AddressPubKeyHash() *AddressPubKeyHash {
 	addr := &AddressPubKeyHash{netID: a.pubKeyHashID}

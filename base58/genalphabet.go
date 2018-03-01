@@ -24,7 +24,7 @@ var (
 package base58
 
 const (
-	// alphabet is the modified base58 alphabet used by Navcoin.
+	// alphabet is the modified base58 alphabet used by NavCoin.
 	alphabet = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 
 	alphabetIdx0 = '1'
