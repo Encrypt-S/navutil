@@ -8,7 +8,7 @@ const (
 	// SatoshiPerBitcent is the number of satoshi in one bitcoin cent.
 	SatoshiPerBitcent = 1e6
 
-	// SatoshiPerNavCoin is the number of satoshi in one bitcoin (1 BTC).
+	// SatoshiPerNavCoin is the number of satoshi in one bitcoin (1 NAV).
 	SatoshiPerNavCoin = 1e8
 
 	// MaxSatoshi is the maximum transaction amount allowed in satoshi.

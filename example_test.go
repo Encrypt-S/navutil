@@ -18,9 +18,9 @@ func ExampleAmount() {
 	a = navutil.Amount(1e5)
 	fmt.Println("100,000 Satoshis:", a)
 	// Output:
-	// Zero Satoshi: 0 BTC
-	// 100,000,000 Satoshis: 1 BTC
-	// 100,000 Satoshis: 0.001 BTC
+	// Zero Satoshi: 0 NAV
+	// 100,000,000 Satoshis: 1 NAV
+	// 100,000 Satoshis: 0.001 NAV
 }
 
 func ExampleNewAmount() {
@@ -52,25 +52,25 @@ func ExampleNewAmount() {
 	}
 	fmt.Println(amountNaN) //Output 4
 
-	// Output: 1 BTC
-	// 0.01234567 BTC
-	// 0 BTC
+	// Output: 1 NAV
+	// 0.01234567 NAV
+	// 0 NAV
 	// invalid bitcoin amount
 }
 
 func ExampleAmount_unitConversions() {
 	amount := navutil.Amount(44433322211100)
 
-	fmt.Println("Satoshi to kBTC:", amount.Format(navutil.AmountKiloBTC))
-	fmt.Println("Satoshi to BTC:", amount)
-	fmt.Println("Satoshi to MilliBTC:", amount.Format(navutil.AmountMilliBTC))
-	fmt.Println("Satoshi to MicroBTC:", amount.Format(navutil.AmountMicroBTC))
+	fmt.Println("Satoshi to kNAV:", amount.Format(navutil.AmountKiloNAV))
+	fmt.Println("Satoshi to NAV:", amount)
+	fmt.Println("Satoshi to MilliNAV:", amount.Format(navutil.AmountMilliNAV))
+	fmt.Println("Satoshi to MicroNAV:", amount.Format(navutil.AmountMicroNAV))
 	fmt.Println("Satoshi to Satoshi:", amount.Format(navutil.AmountSatoshi))
 
 	// Output:
-	// Satoshi to kBTC: 444.333222111 kBTC
-	// Satoshi to BTC: 444333.222111 BTC
-	// Satoshi to MilliBTC: 444333222.111 mBTC
-	// Satoshi to MicroBTC: 444333222111 μBTC
+	// Satoshi to kNAV: 444.333222111 kNAV
+	// Satoshi to NAV: 444333.222111 NAV
+	// Satoshi to MilliNAV: 444333222.111 mNAV
+	// Satoshi to MicroNAV: 444333222111 μNAV
 	// Satoshi to Satoshi: 44433322211100 Satoshi
 }

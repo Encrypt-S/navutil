@@ -119,40 +119,40 @@ func TestAmountUnitConversions(t *testing.T) {
 		s         string
 	}{
 		{
-			name:      "MBTC",
+			name:      "MNAV",
 			amount:    MaxSatoshi,
-			unit:      AmountMegaBTC,
+			unit:      AmountMegaNAV,
 			converted: 21,
-			s:         "21 MBTC",
+			s:         "21 MNAV",
 		},
 		{
-			name:      "kBTC",
+			name:      "kNAV",
 			amount:    44433322211100,
-			unit:      AmountKiloBTC,
+			unit:      AmountKiloNAV,
 			converted: 444.33322211100,
-			s:         "444.333222111 kBTC",
+			s:         "444.333222111 kNAV",
 		},
 		{
-			name:      "BTC",
+			name:      "NAV",
 			amount:    44433322211100,
-			unit:      AmountBTC,
+			unit:      AmountNAV,
 			converted: 444333.22211100,
-			s:         "444333.222111 BTC",
+			s:         "444333.222111 NAV",
 		},
 		{
-			name:      "mBTC",
+			name:      "mNAV",
 			amount:    44433322211100,
-			unit:      AmountMilliBTC,
+			unit:      AmountMilliNAV,
 			converted: 444333222.11100,
-			s:         "444333222.111 mBTC",
+			s:         "444333222.111 mNAV",
 		},
 		{
 
-			name:      "μBTC",
+			name:      "μNAV",
 			amount:    44433322211100,
-			unit:      AmountMicroBTC,
+			unit:      AmountMicroNAV,
 			converted: 444333222111.00,
-			s:         "444333222111 μBTC",
+			s:         "444333222111 μNAV",
 		},
 		{
 
@@ -168,7 +168,7 @@ func TestAmountUnitConversions(t *testing.T) {
 			amount:    44433322211100,
 			unit:      AmountUnit(-1),
 			converted: 4443332.2211100,
-			s:         "4443332.22111 1e-1 BTC",
+			s:         "4443332.22111 1e-1 NAV",
 		},
 	}
 
@@ -185,15 +185,15 @@ func TestAmountUnitConversions(t *testing.T) {
 			continue
 		}
 
-		// Verify that Amount.ToBTC works as advertised.
-		f1 := test.amount.ToUnit(AmountBTC)
-		f2 := test.amount.ToBTC()
+		// Verify that Amount.ToNAV works as advertised.
+		f1 := test.amount.ToUnit(AmountNAV)
+		f2 := test.amount.ToNAV()
 		if f1 != f2 {
-			t.Errorf("%v: ToBTC does not match ToUnit(AmountBTC): %v != %v", test.name, f1, f2)
+			t.Errorf("%v: ToNAV does not match ToUnit(AmountNAV): %v != %v", test.name, f1, f2)
 		}
 
 		// Verify that Amount.String works as advertised.
-		s1 := test.amount.Format(AmountBTC)
+		s1 := test.amount.Format(AmountNAV)
 		s2 := test.amount.String()
 		if s1 != s2 {
 			t.Errorf("%v: String does not match Format(AmountNavCoin): %v != %v", test.name, s1, s2)
@@ -209,52 +209,52 @@ func TestAmountMulF64(t *testing.T) {
 		res  Amount
 	}{
 		{
-			name: "Multiply 0.1 BTC by 2",
-			amt:  100e5, // 0.1 BTC
+			name: "Multiply 0.1 NAV by 2",
+			amt:  100e5, // 0.1 NAV
 			mul:  2,
-			res:  200e5, // 0.2 BTC
+			res:  200e5, // 0.2 NAV
 		},
 		{
-			name: "Multiply 0.2 BTC by 0.02",
-			amt:  200e5, // 0.2 BTC
+			name: "Multiply 0.2 NAV by 0.02",
+			amt:  200e5, // 0.2 NAV
 			mul:  1.02,
-			res:  204e5, // 0.204 BTC
+			res:  204e5, // 0.204 NAV
 		},
 		{
-			name: "Multiply 0.1 BTC by -2",
-			amt:  100e5, // 0.1 BTC
+			name: "Multiply 0.1 NAV by -2",
+			amt:  100e5, // 0.1 NAV
 			mul:  -2,
-			res:  -200e5, // -0.2 BTC
+			res:  -200e5, // -0.2 NAV
 		},
 		{
-			name: "Multiply 0.2 BTC by -0.02",
-			amt:  200e5, // 0.2 BTC
+			name: "Multiply 0.2 NAV by -0.02",
+			amt:  200e5, // 0.2 NAV
 			mul:  -1.02,
-			res:  -204e5, // -0.204 BTC
+			res:  -204e5, // -0.204 NAV
 		},
 		{
-			name: "Multiply -0.1 BTC by 2",
-			amt:  -100e5, // -0.1 BTC
+			name: "Multiply -0.1 NAV by 2",
+			amt:  -100e5, // -0.1 NAV
 			mul:  2,
-			res:  -200e5, // -0.2 BTC
+			res:  -200e5, // -0.2 NAV
 		},
 		{
-			name: "Multiply -0.2 BTC by 0.02",
-			amt:  -200e5, // -0.2 BTC
+			name: "Multiply -0.2 NAV by 0.02",
+			amt:  -200e5, // -0.2 NAV
 			mul:  1.02,
-			res:  -204e5, // -0.204 BTC
+			res:  -204e5, // -0.204 NAV
 		},
 		{
-			name: "Multiply -0.1 BTC by -2",
-			amt:  -100e5, // -0.1 BTC
+			name: "Multiply -0.1 NAV by -2",
+			amt:  -100e5, // -0.1 NAV
 			mul:  -2,
-			res:  200e5, // 0.2 BTC
+			res:  200e5, // 0.2 NAV
 		},
 		{
-			name: "Multiply -0.2 BTC by -0.02",
-			amt:  -200e5, // -0.2 BTC
+			name: "Multiply -0.2 NAV by -0.02",
+			amt:  -200e5, // -0.2 NAV
 			mul:  -1.02,
-			res:  204e5, // 0.204 BTC
+			res:  204e5, // 0.204 NAV
 		},
 		{
 			name: "Round down",
@@ -270,9 +270,9 @@ func TestAmountMulF64(t *testing.T) {
 		},
 		{
 			name: "Multiply by 0.",
-			amt:  1e8, // 1 BTC
+			amt:  1e8, // 1 NAV
 			mul:  0,
-			res:  0, // 0 BTC
+			res:  0, // 0 NAV
 		},
 		{
 			name: "Multiply 1 by 0.5.",
