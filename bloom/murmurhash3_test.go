@@ -7,7 +7,7 @@ package bloom_test
 import (
 	"testing"
 
-	"github.com/roasbeef/btcutil/bloom"
+	"github.com/navcoin/navutil/bloom"
 )
 
 // TestMurmurHash3 ensure the MurmurHash3 function produces the correct hash

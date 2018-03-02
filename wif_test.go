@@ -2,14 +2,14 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package btcutil_test
+package navutil_test
 
 import (
 	"testing"
 
-	"github.com/roasbeef/btcd/btcec"
-	"github.com/roasbeef/btcd/chaincfg"
-	. "github.com/roasbeef/btcutil"
+	"github.com/navcoin/navd/btcec"
+	"github.com/navcoin/navd/chaincfg"
+	. "github.com/navcoin/navutil"
 )
 
 func TestEncodeDecodeWIF(t *testing.T) {
